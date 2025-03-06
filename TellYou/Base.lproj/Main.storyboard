@@ -40,6 +40,7 @@
                             <constraint firstItem="xYQ-48-oPL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mp2-ZF-FcY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="9wk-nB-JPa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

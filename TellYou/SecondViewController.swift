@@ -55,6 +55,8 @@ class SecondViewController: UIViewController {
         styleTextField.text = bomi.style
         blogTextField.text = bomi.blog
         
+        DataManager.shared.setValue(value: bomi.blog)
+        
         print(#function)
     }
     @IBAction func tappedGyuhyunButton(_ sender: UIButton) {
@@ -68,6 +70,8 @@ class SecondViewController: UIViewController {
         strengthTextField.text = gyuhyeon.strength
         styleTextField.text = gyuhyeon.style
         blogTextField.text = gyuhyeon.blog
+        
+        DataManager.shared.setValue(value: gyuhyeon.blog)
         
         print(#function)
     }
@@ -83,6 +87,8 @@ class SecondViewController: UIViewController {
         styleTextField.text = chanho.style
         blogTextField.text = chanho.blog
         
+        DataManager.shared.setValue(value: chanho.blog)
+        
         print(#function)
     }
     @IBAction func tappedJaewooButton(_ sender: UIButton) {
@@ -97,7 +103,25 @@ class SecondViewController: UIViewController {
         styleTextField.text = jaewoo.style
         blogTextField.text = jaewoo.blog
         
+        DataManager.shared.setValue(value: jaewoo.blog)
+        
         print(#function)
     }
+}
+
+class DataManager {
+    static let shared = DataManager()
     
+    var selectedurl: [String: String] = [:]
+    
+    private init() {}
+    
+    func setValue(key: String = "default", value: String) {
+        selectedurl.removeAll()
+        selectedurl["default"] = value
+    }
+    
+    func getValue() -> String? {
+        return selectedurl["default"]
+    }
 }

@@ -82,6 +82,21 @@ class SecondViewController: UIViewController {
         view.endEditing(true)
     }
     
+    func buttonClickAction(selectedButton: UIButton) {
+        var buttonList: [UIButton?] = [bomiButton, gyuhyunButton, chanhoButton, jaewooButton]
+        var memberList: [Member] = [bomi, gyuhyeon, chanho, jaewoo]
+        var textFieldList: [UITextField] = [nameTextField, mbtiTextField, strengthTextField, styleTextField, blogTextField]
+        
+        let indexRow = buttonList.firstIndex(of: selectedButton)
+        
+        if var remainButton = buttonList.remove(at: indexRow!) {
+            selectedButton.imageView?.alpha = 1.0
+            for i in buttonList {
+                i?.imageView?.alpha = 0.5
+            }
+        }
+    }
+    
     private func setupKeyboardObservers() {
         NotificationCenter.default.addObserver(
             self,
@@ -132,6 +147,7 @@ class SecondViewController: UIViewController {
         strengthTextField.text = bomi.strength
         styleTextField.text = bomi.style
         blogTextField.text = bomi.blog
+        buttonClickAction(selectedButton: bomiButton)
         
         DataManager.shared.setValue(key: "url", value: bomi.blog)
         
@@ -148,6 +164,7 @@ class SecondViewController: UIViewController {
         strengthTextField.text = gyuhyeon.strength
         styleTextField.text = gyuhyeon.style
         blogTextField.text = gyuhyeon.blog
+        buttonClickAction(selectedButton: gyuhyunButton)
         
         DataManager.shared.setValue(key: "url", value: gyuhyeon.blog)
         

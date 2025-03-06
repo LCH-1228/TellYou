@@ -44,56 +44,57 @@ class SecondViewController: UIViewController {
         DataManager.shared.setValue(value: "https://nbcamp.spartacodingclub.kr")
         
         setupKeyboardObservers()
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
-                tapGesture.cancelsTouchesInView = false
-                view.addGestureRecognizer(tapGesture)
-            }
-            
-            deinit {
-                NotificationCenter.default.removeObserver(self)
-            }
-            
-            @objc func closeKeyboard() {
-                view.endEditing(true)
-            }
-            
-            private func setupKeyboardObservers() {
-                NotificationCenter.default.addObserver(
-                    self,
-                    selector: #selector(keyboardWillShow(_:)),
-                    name: UIResponder.keyboardWillShowNotification,
-                    object: nil
-                )
-                NotificationCenter.default.addObserver(
-                    self,
-                    selector: #selector(keyboardWillHide(_:)),
-                    name: UIResponder.keyboardWillHideNotification,
-                    object: nil
-                )
-            }
-            
-            @objc private func keyboardWillShow(_ notification: Notification) {
-                guard
-                    let userInfo = notification.userInfo,
-                    let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-                else { return }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func closeKeyboard() {
+        view.endEditing(true)
+    }
+    
+    private func setupKeyboardObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        guard
+            let userInfo = notification.userInfo,
+            let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        else { return }
 
-                let keyboardHeight = keyboardFrame.height
-                
-                self.view.frame.origin.y -= keyboardHeight
-                
-                // 자연스럽게 올라가는 애니메이션
-                UIView.animate(withDuration: 0.3) {
-                    self.view.layoutIfNeeded()
-                }
+        let keyboardHeight = keyboardFrame.height
+        
+        if self.view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= keyboardHeight
+            // 자연스럽게 올라가는 애니메이션
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
             }
+        }
+    }
 
-            @objc private func keyboardWillHide(_ notification: Notification) {
-                self.view.frame.origin.y = 0
-                UIView.animate(withDuration: 0.3) {
-                    self.view.layoutIfNeeded()
-                }
-            }
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        self.view.frame.origin.y = 0
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
     
     @IBAction func tappedBomiButton(_ sender: UIButton) {
         gyuhyunButton.imageView?.alpha = 0.5

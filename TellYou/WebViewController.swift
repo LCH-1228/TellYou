@@ -15,7 +15,7 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myUrl = URL(string: DataManager.shared.getValue()!)
+        let myUrl = URL(string: DataManager.shared.getValue(key: "url")!)
         let myRequest = URLRequest(url: myUrl!)
         webView.load(myRequest)
     }

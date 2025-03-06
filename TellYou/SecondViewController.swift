@@ -45,21 +45,41 @@ class SecondViewController: UIViewController {
                     gyuhyunButton.imageView?.alpha = 0.5
                     chanhoButton.imageView?.alpha = 0.5
                     jaewooButton.imageView?.alpha = 0.5
+                    nameTextField.text = bomi.name
+                    mbtiTextField.text = bomi.mbti
+                    strengthTextField.text = bomi.strength
+                    styleTextField.text = bomi.style
+                    blogTextField.text = bomi.blog
                 case "2":
                     bomiButton.imageView?.alpha = 0.5
                     gyuhyunButton.imageView?.alpha = 1.0
                     chanhoButton.imageView?.alpha = 0.5
                     jaewooButton.imageView?.alpha = 0.5
+                    nameTextField.text = gyuhyeon.name
+                    mbtiTextField.text = gyuhyeon.mbti
+                    strengthTextField.text = gyuhyeon.strength
+                    styleTextField.text = gyuhyeon.style
+                    blogTextField.text = gyuhyeon.blog
                 case "3":
                     bomiButton.imageView?.alpha = 0.5
                     gyuhyunButton.imageView?.alpha = 0.5
                     chanhoButton.imageView?.alpha = 1.0
                     jaewooButton.imageView?.alpha = 0.5
+                    nameTextField.text = chanho.name
+                    mbtiTextField.text = chanho.mbti
+                    strengthTextField.text = chanho.strength
+                    styleTextField.text = chanho.style
+                    blogTextField.text = chanho.blog
                 case "4":
                     bomiButton.imageView?.alpha = 0.5
                     gyuhyunButton.imageView?.alpha = 0.5
                     chanhoButton.imageView?.alpha = 0.5
                     jaewooButton.imageView?.alpha = 1.0
+                    nameTextField.text = jaewoo.name
+                    mbtiTextField.text = jaewoo.mbti
+                    strengthTextField.text = jaewoo.strength
+                    styleTextField.text = jaewoo.style
+                    blogTextField.text = jaewoo.blog
                 default:
                     bomiButton.imageView?.alpha = 1.0
                     gyuhyunButton.imageView?.alpha = 1.0
@@ -80,21 +100,6 @@ class SecondViewController: UIViewController {
     
     @objc func closeKeyboard() {
         view.endEditing(true)
-    }
-    
-    func buttonClickAction(selectedButton: UIButton) {
-        var buttonList: [UIButton?] = [bomiButton, gyuhyunButton, chanhoButton, jaewooButton]
-        var memberList: [Member] = [bomi, gyuhyeon, chanho, jaewoo]
-        var textFieldList: [UITextField] = [nameTextField, mbtiTextField, strengthTextField, styleTextField, blogTextField]
-        
-        let indexRow = buttonList.firstIndex(of: selectedButton)
-        
-        if var remainButton = buttonList.remove(at: indexRow!) {
-            selectedButton.imageView?.alpha = 1.0
-            for i in buttonList {
-                i?.imageView?.alpha = 0.5
-            }
-        }
     }
     
     private func setupKeyboardObservers() {
@@ -147,7 +152,6 @@ class SecondViewController: UIViewController {
         strengthTextField.text = bomi.strength
         styleTextField.text = bomi.style
         blogTextField.text = bomi.blog
-        buttonClickAction(selectedButton: bomiButton)
         
         DataManager.shared.setValue(key: "url", value: bomi.blog)
         
@@ -164,7 +168,6 @@ class SecondViewController: UIViewController {
         strengthTextField.text = gyuhyeon.strength
         styleTextField.text = gyuhyeon.style
         blogTextField.text = gyuhyeon.blog
-        buttonClickAction(selectedButton: gyuhyunButton)
         
         DataManager.shared.setValue(key: "url", value: gyuhyeon.blog)
         

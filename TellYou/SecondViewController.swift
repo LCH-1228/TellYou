@@ -41,7 +41,14 @@ class SecondViewController: UIViewController {
         chanhoButton.imageView?.alpha = 1.0
         jaewooButton.imageView?.alpha = 1.0
         bomiButton.imageView?.alpha = 1.0
-        DataManager.shared.setValue(value: "https://nbcamp.spartacodingclub.kr")
+        DataManager.shared.setValue(key: "url", value: "https://nbcamp.spartacodingclub.kr")
+        
+        let selectetButton = DataManager.shared.getValue(key: "selectedbutton")
+        if selectetButton == "1" {
+            chanhoButton.imageView?.alpha = 0.5
+            jaewooButton.imageView?.alpha = 0.5
+            gyuhyunButton.imageView?.alpha = 0.5
+        }
         
         setupKeyboardObservers()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
@@ -108,7 +115,7 @@ class SecondViewController: UIViewController {
         styleTextField.text = bomi.style
         blogTextField.text = bomi.blog
         
-        DataManager.shared.setValue(value: bomi.blog)
+        DataManager.shared.setValue(key: "url", value: bomi.blog)
         
         print(#function)
     }
@@ -124,7 +131,7 @@ class SecondViewController: UIViewController {
         styleTextField.text = gyuhyeon.style
         blogTextField.text = gyuhyeon.blog
         
-        DataManager.shared.setValue(value: gyuhyeon.blog)
+        DataManager.shared.setValue(key: "url", value: gyuhyeon.blog)
         
         print(#function)
     }
@@ -140,7 +147,7 @@ class SecondViewController: UIViewController {
         styleTextField.text = chanho.style
         blogTextField.text = chanho.blog
         
-        DataManager.shared.setValue(value: chanho.blog)
+        DataManager.shared.setValue(key: "url", value: chanho.blog)
         
         print(#function)
     }
@@ -156,7 +163,7 @@ class SecondViewController: UIViewController {
         styleTextField.text = jaewoo.style
         blogTextField.text = jaewoo.blog
         
-        DataManager.shared.setValue(value: jaewoo.blog)
+        DataManager.shared.setValue(key: "url", value: jaewoo.blog)
         
         print(#function)
     }
@@ -169,12 +176,12 @@ class DataManager {
     
     private init() {}
     
-    func setValue(key: String = "default", value: String) {
+    func setValue(key: String, value: String) {
         selectedurl.removeAll()
-        selectedurl["default"] = value
+        selectedurl[key] = value
     }
     
-    func getValue() -> String? {
-        return selectedurl["default"]
+    func getValue(key: String) -> String? {
+        return selectedurl[key]
     }
 }

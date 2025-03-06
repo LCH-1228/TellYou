@@ -246,18 +246,28 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nNi-Kr-miq">
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nNi-Kr-miq">
                                                 <rect key="frame" x="30" y="350.33333333333337" width="330" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byw-Nv-j69">
+                                                <rect key="frame" x="328" y="356" width="22" height="24"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <segue destination="GLc-E1-Uc8" kind="show" id="bun-oI-Nsq"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="orn-4m-u7Y" firstAttribute="leading" secondItem="KcS-bN-WTM" secondAttribute="leading" constant="30" id="5AG-4t-Cvg"/>
                                             <constraint firstItem="UNl-WA-qbX" firstAttribute="leading" secondItem="KcS-bN-WTM" secondAttribute="leading" constant="30" id="60v-Uw-UoC"/>
                                             <constraint firstItem="cFw-LX-Zq2" firstAttribute="top" secondItem="UNl-WA-qbX" secondAttribute="bottom" id="7O0-qq-ccH"/>
                                             <constraint firstItem="Rb9-At-1S7" firstAttribute="leading" secondItem="KcS-bN-WTM" secondAttribute="leading" constant="30" id="APu-jp-oqb"/>
+                                            <constraint firstItem="byw-Nv-j69" firstAttribute="bottom" secondItem="nNi-Kr-miq" secondAttribute="bottom" constant="-5" id="DVC-bd-ihT"/>
                                             <constraint firstItem="ycK-cA-WG6" firstAttribute="top" secondItem="cFw-LX-Zq2" secondAttribute="bottom" constant="30" id="FfC-cd-qjV"/>
+                                            <constraint firstItem="byw-Nv-j69" firstAttribute="leading" secondItem="nNi-Kr-miq" secondAttribute="leading" constant="305" id="FjD-8g-1BH"/>
                                             <constraint firstItem="lmA-4y-KEO" firstAttribute="leading" secondItem="KcS-bN-WTM" secondAttribute="leading" constant="30" id="HAw-Ja-SlQ"/>
                                             <constraint firstAttribute="bottom" secondItem="nNi-Kr-miq" secondAttribute="bottom" constant="30" id="K8S-Uw-mZh"/>
                                             <constraint firstItem="a9t-5z-haa" firstAttribute="top" secondItem="rbf-pe-Pax" secondAttribute="bottom" constant="30" id="NBY-cI-n1k"/>
@@ -268,12 +278,14 @@
                                             <constraint firstItem="nNi-Kr-miq" firstAttribute="leading" secondItem="KcS-bN-WTM" secondAttribute="leading" constant="30" id="gHR-Bi-5G0"/>
                                             <constraint firstAttribute="trailing" secondItem="nNi-Kr-miq" secondAttribute="trailing" constant="30" id="iry-tW-tB2"/>
                                             <constraint firstItem="zQf-Oc-hod" firstAttribute="top" secondItem="orn-4m-u7Y" secondAttribute="bottom" constant="30" id="jBZ-hD-TIH"/>
+                                            <constraint firstItem="byw-Nv-j69" firstAttribute="trailing" secondItem="nNi-Kr-miq" secondAttribute="trailing" constant="-5" id="jH4-E6-MI1"/>
                                             <constraint firstItem="zQf-Oc-hod" firstAttribute="leading" secondItem="KcS-bN-WTM" secondAttribute="leading" constant="30" id="jMO-m1-ykI"/>
                                             <constraint firstAttribute="trailing" secondItem="rbf-pe-Pax" secondAttribute="trailing" constant="30" id="jnz-a8-rWk"/>
                                             <constraint firstItem="rbf-pe-Pax" firstAttribute="leading" secondItem="KcS-bN-WTM" secondAttribute="leading" constant="30" id="l73-o8-4qQ"/>
                                             <constraint firstItem="orn-4m-u7Y" firstAttribute="top" secondItem="ycK-cA-WG6" secondAttribute="bottom" id="ocg-bK-Q3b"/>
                                             <constraint firstItem="ycK-cA-WG6" firstAttribute="leading" secondItem="KcS-bN-WTM" secondAttribute="leading" constant="30" id="pC5-gh-bvE"/>
                                             <constraint firstAttribute="trailing" secondItem="orn-4m-u7Y" secondAttribute="trailing" constant="30" id="qRg-eE-zMy"/>
+                                            <constraint firstItem="byw-Nv-j69" firstAttribute="top" secondItem="nNi-Kr-miq" secondAttribute="top" constant="5" id="rYh-Pc-SmU"/>
                                             <constraint firstItem="UNl-WA-qbX" firstAttribute="top" secondItem="KcS-bN-WTM" secondAttribute="top" constant="20" id="si1-mx-onu"/>
                                             <constraint firstAttribute="trailing" secondItem="cFw-LX-Zq2" secondAttribute="trailing" constant="30" id="vhc-0F-Xri"/>
                                             <constraint firstItem="lmA-4y-KEO" firstAttribute="top" secondItem="zQf-Oc-hod" secondAttribute="bottom" id="w3W-nO-3Gk"/>
@@ -326,15 +338,6 @@
                                 <buttonConfiguration key="configuration" style="plain" image="character4Image"/>
                                 <connections>
                                     <action selector="tappedJaewooButton:" destination="jdF-kY-fAR" eventType="touchUpInside" id="sJf-6C-306"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byw-Nv-j69">
-                                <rect key="frame" x="158" y="433" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="GLc-E1-Uc8" kind="show" id="q2H-Xn-nQa"/>
                                 </connections>
                             </button>
                         </subviews>

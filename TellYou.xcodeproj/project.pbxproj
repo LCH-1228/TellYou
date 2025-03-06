@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9B9D21A42D795985004329C3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9D21A32D795985004329C3 /* WebKit.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		9B9D21A32D795985004329C3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9BC157142D76A1AC000D0D32 /* TellYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,16 +41,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9D21A42D795985004329C3 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B9D21A22D795985004329C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B9D21A32D795985004329C3 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9BC1570B2D76A1AC000D0D32 = {
 			isa = PBXGroup;
 			children = (
 				9BC157162D76A1AC000D0D32 /* TellYou */,
+				9B9D21A22D795985004329C3 /* Frameworks */,
 				9BC157152D76A1AC000D0D32 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +105,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					second,
+				);
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {

@@ -37,9 +37,9 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gyuhyunButton.imageView?.alpha = 0.5
-        chanhoButton.imageView?.alpha = 0.5
-        jaewooButton.imageView?.alpha = 0.5
+        gyuhyunButton.imageView?.alpha = 1.0
+        chanhoButton.imageView?.alpha = 1.0
+        jaewooButton.imageView?.alpha = 1.0
         bomiButton.imageView?.alpha = 1.0
     }
     

@@ -126,6 +126,41 @@
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="5G3-8p-SDZ">
+            <objects>
+                <viewController id="GLc-E1-Uc8" customClass="WebViewController" customModule="TellYou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZO6-X2-uI8">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhJ-Qx-EaU">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cM1-7x-0Kx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZhJ-Qx-EaU" firstAttribute="bottom" secondItem="cM1-7x-0Kx" secondAttribute="bottom" id="V1e-Hg-Sip"/>
+                            <constraint firstItem="cM1-7x-0Kx" firstAttribute="trailing" secondItem="ZhJ-Qx-EaU" secondAttribute="trailing" id="hnB-S5-EaU"/>
+                            <constraint firstItem="cM1-7x-0Kx" firstAttribute="top" secondItem="ZhJ-Qx-EaU" secondAttribute="top" id="oN0-TV-QdH"/>
+                            <constraint firstItem="ZhJ-Qx-EaU" firstAttribute="leading" secondItem="cM1-7x-0Kx" secondAttribute="leading" id="roP-ur-4YM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uoD-EC-xHk"/>
+                    <connections>
+                        <outlet property="webView" destination="ZhJ-Qx-EaU" id="uYJ-LY-n2x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAM-Sf-GGl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1947.6923076923076" y="-710.18957345971558"/>
+        </scene>
         <!--Second View Controller-->
         <scene sceneID="VVI-Ja-EnC">
             <objects>
@@ -291,6 +326,15 @@
                                 <buttonConfiguration key="configuration" style="plain" image="character4Image"/>
                                 <connections>
                                     <action selector="tappedJaewooButton:" destination="jdF-kY-fAR" eventType="touchUpInside" id="sJf-6C-306"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byw-Nv-j69">
+                                <rect key="frame" x="158" y="433" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="GLc-E1-Uc8" kind="show" id="q2H-Xn-nQa"/>
                                 </connections>
                             </button>
                         </subviews>

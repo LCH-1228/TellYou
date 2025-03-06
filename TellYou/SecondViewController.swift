@@ -37,19 +37,37 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gyuhyunButton.imageView?.alpha = 1.0
-        chanhoButton.imageView?.alpha = 1.0
-        jaewooButton.imageView?.alpha = 1.0
-        bomiButton.imageView?.alpha = 1.0
-        DataManager.shared.setValue(key: "url", value: "https://nbcamp.spartacodingclub.kr")
         
         let selectetButton = DataManager.shared.getValue(key: "selectedbutton")
-        if selectetButton == "1" {
-            chanhoButton.imageView?.alpha = 0.5
-            jaewooButton.imageView?.alpha = 0.5
-            gyuhyunButton.imageView?.alpha = 0.5
-        }
-        
+        switch selectetButton {
+                case "1":
+                    bomiButton.imageView?.alpha = 1.0
+                    gyuhyunButton.imageView?.alpha = 0.5
+                    chanhoButton.imageView?.alpha = 0.5
+                    jaewooButton.imageView?.alpha = 0.5
+                case "2":
+                    bomiButton.imageView?.alpha = 0.5
+                    gyuhyunButton.imageView?.alpha = 1.0
+                    chanhoButton.imageView?.alpha = 0.5
+                    jaewooButton.imageView?.alpha = 0.5
+                case "3":
+                    bomiButton.imageView?.alpha = 0.5
+                    gyuhyunButton.imageView?.alpha = 0.5
+                    chanhoButton.imageView?.alpha = 1.0
+                    jaewooButton.imageView?.alpha = 0.5
+                case "4":
+                    bomiButton.imageView?.alpha = 0.5
+                    gyuhyunButton.imageView?.alpha = 0.5
+                    chanhoButton.imageView?.alpha = 0.5
+                    jaewooButton.imageView?.alpha = 1.0
+                default:
+                    bomiButton.imageView?.alpha = 1.0
+                    gyuhyunButton.imageView?.alpha = 1.0
+                    chanhoButton.imageView?.alpha = 1.0
+                    jaewooButton.imageView?.alpha = 1.0
+                }
+        DataManager.shared.setValue(key: "url", value: "https://nbcamp.spartacodingclub.kr")
+               
         setupKeyboardObservers()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         tapGesture.cancelsTouchesInView = false

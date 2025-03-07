@@ -40,53 +40,58 @@ class SecondViewController: UIViewController {
         
         let selectetButton = DataManager.shared.getValue(key: "selectedbutton")
         switch selectetButton {
-                case "1":
-                    bomiButton.imageView?.alpha = 1.0
-                    gyuhyunButton.imageView?.alpha = 0.5
-                    chanhoButton.imageView?.alpha = 0.5
-                    jaewooButton.imageView?.alpha = 0.5
-                    nameTextField.text = bomi.name
-                    mbtiTextField.text = bomi.mbti
-                    strengthTextField.text = bomi.strength
-                    styleTextField.text = bomi.style
-                    blogTextField.text = bomi.blog
-                case "2":
-                    bomiButton.imageView?.alpha = 0.5
-                    gyuhyunButton.imageView?.alpha = 1.0
-                    chanhoButton.imageView?.alpha = 0.5
-                    jaewooButton.imageView?.alpha = 0.5
-                    nameTextField.text = gyuhyeon.name
-                    mbtiTextField.text = gyuhyeon.mbti
-                    strengthTextField.text = gyuhyeon.strength
-                    styleTextField.text = gyuhyeon.style
-                    blogTextField.text = gyuhyeon.blog
-                case "3":
-                    bomiButton.imageView?.alpha = 0.5
-                    gyuhyunButton.imageView?.alpha = 0.5
-                    chanhoButton.imageView?.alpha = 1.0
-                    jaewooButton.imageView?.alpha = 0.5
-                    nameTextField.text = chanho.name
-                    mbtiTextField.text = chanho.mbti
-                    strengthTextField.text = chanho.strength
-                    styleTextField.text = chanho.style
-                    blogTextField.text = chanho.blog
-                case "4":
-                    bomiButton.imageView?.alpha = 0.5
-                    gyuhyunButton.imageView?.alpha = 0.5
-                    chanhoButton.imageView?.alpha = 0.5
-                    jaewooButton.imageView?.alpha = 1.0
-                    nameTextField.text = jaewoo.name
-                    mbtiTextField.text = jaewoo.mbti
-                    strengthTextField.text = jaewoo.strength
-                    styleTextField.text = jaewoo.style
-                    blogTextField.text = jaewoo.blog
-                default:
-                    bomiButton.imageView?.alpha = 1.0
-                    gyuhyunButton.imageView?.alpha = 1.0
-                    chanhoButton.imageView?.alpha = 1.0
-                    jaewooButton.imageView?.alpha = 1.0
-                }
-        DataManager.shared.setValue(key: "url", value: "https://nbcamp.spartacodingclub.kr")
+        case "1":
+            bomiButton.imageView?.alpha = 1.0
+            gyuhyunButton.imageView?.alpha = 0.5
+            chanhoButton.imageView?.alpha = 0.5
+            jaewooButton.imageView?.alpha = 0.5
+            nameTextField.text = bomi.name
+            mbtiTextField.text = bomi.mbti
+            strengthTextField.text = bomi.strength
+            styleTextField.text = bomi.style
+            blogTextField.text = bomi.blog
+            DataManager.shared.setValue(key: "url", value: bomi.blog)
+        case "2":
+            bomiButton.imageView?.alpha = 0.5
+            gyuhyunButton.imageView?.alpha = 1.0
+            chanhoButton.imageView?.alpha = 0.5
+            jaewooButton.imageView?.alpha = 0.5
+            nameTextField.text = gyuhyeon.name
+            mbtiTextField.text = gyuhyeon.mbti
+            strengthTextField.text = gyuhyeon.strength
+            styleTextField.text = gyuhyeon.style
+            blogTextField.text = gyuhyeon.blog
+            DataManager.shared.setValue(key: "url", value: gyuhyeon.blog)
+        case "3":
+            bomiButton.imageView?.alpha = 0.5
+            gyuhyunButton.imageView?.alpha = 0.5
+            chanhoButton.imageView?.alpha = 1.0
+            jaewooButton.imageView?.alpha = 0.5
+            nameTextField.text = chanho.name
+            mbtiTextField.text = chanho.mbti
+            strengthTextField.text = chanho.strength
+            styleTextField.text = chanho.style
+            blogTextField.text = chanho.blog
+            DataManager.shared.setValue(key: "url", value: chanho.blog)
+        case "4":
+            bomiButton.imageView?.alpha = 0.5
+            gyuhyunButton.imageView?.alpha = 0.5
+            chanhoButton.imageView?.alpha = 0.5
+            jaewooButton.imageView?.alpha = 1.0
+            nameTextField.text = jaewoo.name
+            mbtiTextField.text = jaewoo.mbti
+            strengthTextField.text = jaewoo.strength
+            styleTextField.text = jaewoo.style
+            blogTextField.text = jaewoo.blog
+            DataManager.shared.setValue(key: "url", value: jaewoo.blog)
+        default:
+            bomiButton.imageView?.alpha = 1.0
+            gyuhyunButton.imageView?.alpha = 1.0
+            chanhoButton.imageView?.alpha = 1.0
+            jaewooButton.imageView?.alpha = 1.0
+            DataManager.shared.setValue(key: "url", value: "https://nbcamp.spartacodingclub.kr")
+        }
+        
                
         setupKeyboardObservers()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))

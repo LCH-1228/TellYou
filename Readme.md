@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- logo -->
-<img src="https://github.com/LCH-1228/TellYou/blob/main/TellYou/Assets.xcassets/AppIcon.appiconset/이미지.png?raw=true" width="400"/>
+<img src="https://raw.githubusercontent.com/LCH-1228/TellYou/refs/heads/main/TellYou/Assets.xcassets/AppIcon.appiconset/icon.png" width="400"/>
 
 ### 내일배움캠프 iOS 스타터 3팀 프로젝트[TellYou]
 

@@ -19,9 +19,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="cqC-9M-Whp">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tell You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Bo-zN-oKq">
-                                <rect key="frame" x="61" y="227" width="271" height="399"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Bo-zN-oKq">
+                                <rect key="frame" x="61" y="226.66666666666663" width="271" height="399"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="271" id="cAV-tq-hBy"/>
+                                    <constraint firstAttribute="height" constant="399" id="f9w-Wg-ze2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,6 +38,8 @@
                             <constraint firstAttribute="bottom" secondItem="cqC-9M-Whp" secondAttribute="bottom" id="5gd-2d-CTt"/>
                             <constraint firstItem="cqC-9M-Whp" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="HTt-Ob-a4F"/>
                             <constraint firstAttribute="trailing" secondItem="cqC-9M-Whp" secondAttribute="trailing" id="ZMl-Ol-FHO"/>
+                            <constraint firstItem="7Bo-zN-oKq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eWb-YU-dwb"/>
+                            <constraint firstItem="7Bo-zN-oKq" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="h5D-87-Xhb"/>
                             <constraint firstItem="cqC-9M-Whp" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="yNM-N1-6lz"/>
                         </constraints>
                     </view>
